@@ -47,11 +47,35 @@ class LinkedList:
 
             while curr.next:
                 curr = curr.next
-                
+
             curr.next = Node(data)
+
+    # Inserts data at a specific index of a linked list
+    def insert(self, data, index):
+        if index > self.size():
+            return
+
+        curr = self.head
+
+        for node in range(index):
+            curr = curr.next
+
+        new_node = Node(data)
+        new_node.next = curr.next
+        curr.next = new_node
+
 
 ll = LinkedList()
 
-ll.append(1337)
-ll.preappend(7331)
-ll.append(123)
+ll.preappend(7)
+ll.preappend(6)
+ll.preappend(2)
+ll.preappend(3)
+ll.preappend(1)
+ll.preappend(5)
+ll.preappend(4)
+ll.preappend(8)
+
+ll.insert(9, 3)
+
+print("")
