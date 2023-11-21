@@ -87,18 +87,16 @@ class LinkedList:
 
         previous.next = curr.next
 
-ll = LinkedList()
+    # Returns node by index
+    def get(self, index):
+        if index <= 0:
+            return self.head
+        
+        curr = self.head
+        i = 0
 
-ll.preappend(7)
-ll.preappend(6)
-ll.preappend(2)
-ll.preappend(3)
-ll.preappend(1)
-ll.preappend(5)
-ll.preappend(4)
-ll.preappend(8)
-
-ll.insert(9, 3)
-ll.remove(3)
-
-print("")
+        while i < index:
+            i += 1
+            curr = curr.next
+        
+        return curr

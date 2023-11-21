@@ -37,6 +37,7 @@ def merge(left, right):
 # Conquer: sort everything in ascending order
 # Combine: combine all lists into one
 # Divide, conquer and combine
+# O(n*log(n))
 def merge_sort(list):
     if len(list) <= 1:
         return list
@@ -56,9 +57,3 @@ def verify_ascending_sort(list):
         return True
     
     return list[0] <= list[1] and verify_ascending_sort(list[1:])
-
-array = [213,54,23,76,3,34,6,7,908,12,213]
-
-print(array)
-print(merge_sort(array))
-print(verify_ascending_sort(merge_sort(array)))
