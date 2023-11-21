@@ -87,10 +87,6 @@ class LinkedList:
 
         previous.next = curr.next
 
-
-        
-
-
 ll = LinkedList()
 
 ll.preappend(7)
