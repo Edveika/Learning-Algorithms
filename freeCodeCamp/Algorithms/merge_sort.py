@@ -1,4 +1,3 @@
-
 # Splits a list into two
 def split(list):
     mid = len(list) // 2
@@ -49,7 +48,17 @@ def merge_sort(list):
 
     return merge(left, right)
 
+# Verifies if the list was sorted in ascending order
+def verify_ascending_sort(list):
+    size = len(list)
+
+    if size == 0 or size == 1:
+        return True
+    
+    return list[0] <= list[1] and verify_ascending_sort(list[1:])
 
 array = [213,54,23,76,3,34,6,7,908,12,213]
 
+print(array)
 print(merge_sort(array))
+print(verify_ascending_sort(merge_sort(array)))
