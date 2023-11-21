@@ -40,9 +40,18 @@ class LinkedList:
 
     # Adds data to the end of the list
     def append(self, data):
-        curr = self.head
+        if not self.head:
+            self.head = Node(data)
+        else:
+            curr = self.head
 
-        while curr:
-            curr = curr.next
+            while curr.next:
+                curr = curr.next
+                
+            curr.next = Node(data)
 
-        curr.data = data
+ll = LinkedList()
+
+ll.append(1337)
+ll.preappend(7331)
+ll.append(123)
