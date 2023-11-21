@@ -52,17 +52,43 @@ class LinkedList:
 
     # Inserts data at a specific index of a linked list
     def insert(self, data, index):
-        if index > self.size():
+        if index > self.size() or index < 0:
             return
 
         curr = self.head
 
-        for node in range(index):
+        for i in range(index):
             curr = curr.next
 
         new_node = Node(data)
         new_node.next = curr.next
         curr.next = new_node
+
+    # Removes a node from the list at specific index
+    def remove(self, index):
+        if index > self.size() or index < 0:
+            return
+        
+        if index == 0:
+            self.head = self.head.next
+            return
+
+        def get_node(index):
+            nonlocal self
+            node = self.head
+
+            for i in range(index):
+                node = node.next
+
+            return node
+
+        curr = get_node(index)
+        previous = get_node(index - 1)
+
+        previous.next = curr.next
+
+
+        
 
 
 ll = LinkedList()
@@ -77,5 +103,6 @@ ll.preappend(4)
 ll.preappend(8)
 
 ll.insert(9, 3)
+ll.remove(3)
 
 print("")
