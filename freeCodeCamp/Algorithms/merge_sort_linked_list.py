@@ -2,7 +2,7 @@ from linked_list import LinkedList
 
 # Slits linked list into two
 def split(linked_list: LinkedList):
-    if not linked_list or not linked_list.head:
+    if linked_list == None or linked_list.head == None:
         return linked_list, None
 
     mid = linked_list.size() // 2
@@ -17,7 +17,7 @@ def split(linked_list: LinkedList):
     return left, right
 
 # Merges two lists into one
-def merge(left: LinkedList, right: LinkedList):
+def merge(left, right):
     merged = LinkedList()
 
     # Add fake head, will be discarded later
@@ -31,11 +31,11 @@ def merge(left: LinkedList, right: LinkedList):
 
     # Iterate to the end of either list
     while left_head or right_head:
-        if not left_head:
+        if left_head is None:
             curr.next = right_head
             # Sets loop condition to false
             right_head = right_head.next
-        elif not right_head:
+        elif right_head is None:
             curr.next = left_head
             left_head = left_head.next
         else:
@@ -51,9 +51,9 @@ def merge(left: LinkedList, right: LinkedList):
         # Moves to next node
         curr = curr.next
 
-        # Discard fake head
-        head = merged.head.next
-        merged.head = head
+    # Discard fake head
+    head = merged.head.next
+    merged.head = head
 
     return merged
 
@@ -61,7 +61,7 @@ def merge(left: LinkedList, right: LinkedList):
 def merge_sort(linked_list: LinkedList):
     if linked_list.size() == 1:
         return linked_list
-    elif not linked_list.head:
+    elif linked_list.head is None:
         return linked_list
     
     left, right = split(linked_list)
@@ -70,3 +70,13 @@ def merge_sort(linked_list: LinkedList):
     right = merge_sort(right)
 
     return merge(left, right)
+
+
+linked_list = LinkedList()
+
+linked_list.preappend(1337)
+linked_list.preappend(2)
+linked_list.preappend(3)
+linked_list.preappend(7331)
+
+linked_list = merge_sort(linked_list)
