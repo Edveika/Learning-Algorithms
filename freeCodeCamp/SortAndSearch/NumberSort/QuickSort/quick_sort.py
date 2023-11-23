@@ -10,6 +10,8 @@ import sys
 # Then it merges them, because they are sorted
 # If more list or less list is None, when added together we get none, and the function returns
 # NOTE: may cause errors with repeated values
+# Best case: O(n * log(n))
+# Worst: O(n^2)
 def quick_sort(list):
     if len(list) <= 1:
         return list
