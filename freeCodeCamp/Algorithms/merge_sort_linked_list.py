@@ -71,12 +71,39 @@ def merge_sort(linked_list: LinkedList):
 
     return merge(left, right)
 
+# Homework: write verify function for a linked list merge sort
+# Basically just goes to the end of the list and if it does not find any values that are unsorted
+# Returns true, because once head.next is not found, true is returned
+def verify_merge_ascending(head: None) -> bool:
+    # If head is none then returns true, because there is nothing to sort
+    if head == None:
+        return True
+    # If head doesnt have next data, then we assume its sorted and return true
+    elif head.next == None:
+        return True
+    
+    # If data is more than next data, return false, list is not sorted
+    if head.data > head.next.data:
+        return False
+    
+    # If false was not returned, keep on checking
+    return verify_merge_ascending(head.next)
 
 linked_list = LinkedList()
-
 linked_list.preappend(1337)
 linked_list.preappend(2)
 linked_list.preappend(3)
 linked_list.preappend(7331)
 
+# Sorted list
 linked_list = merge_sort(linked_list)
+print(verify_merge_ascending(linked_list.head))
+
+linked_list1 = LinkedList()
+linked_list1.preappend(1)
+linked_list1.preappend(2)
+linked_list1.preappend(7331)
+linked_list1.preappend(3)
+
+# Unsorted list
+print(verify_merge_ascending(linked_list1.head))
