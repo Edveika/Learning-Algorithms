@@ -1,10 +1,10 @@
 <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/FreeCodeCamp_logo.png">
 
-# 🔥 freeCodeCamp Algorithms and Data Structures 🔥
+# 🔥 freeCodeCamp Algorithms and Data Structures
 
 Took freeCodeCamp's [course](https://www.youtube.com/watch?v=8hly31xKli0) on algorithms and data structures and although a lot of the stuff I already knew, it was really useful.
 
-# 📚 New stuff learned 📚
+# 📚 New stuff learned
 
 * New algorithms
   * Quick sort `O(n*log(n))` - this one was a little trickier but I got it
@@ -22,6 +22,6 @@ Took freeCodeCamp's [course](https://www.youtube.com/watch?v=8hly31xKli0) on alg
   * Exponential `O(n^k)`
 * Good Big O notation doesnt really mean that the algorithm is good, because of operation time. Merge sort's operation time is longer than Quick sort's, even though it has a better worst case scenario, Quick sort might be better
 
-# 🤝 Credits 🤝
+# 🤝 Credits
 
 [freeCodeCamp](https://www.freecodecamp.org/) for a high quality course, it is amazing. 
