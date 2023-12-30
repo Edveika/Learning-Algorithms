@@ -4,7 +4,7 @@
 
 Took freeCodeCamp's [course](https://www.youtube.com/watch?v=8hly31xKli0) on algorithms and data structures and although a lot of the stuff I already knew, it was really useful.
 
-# 📚 New stuff learned
+# 📚 New stuff learned/recapped
 
 * New algorithms
   * Quick sort `O(n*log(n))` - this one was a little trickier but I got it
