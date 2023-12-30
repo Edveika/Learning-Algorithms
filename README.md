@@ -10,7 +10,7 @@ Spending some extra time to better understand algorithms.
 
 Inverted a binary tree using a recursive function for fun🤷‍♂️
 
-```
+```python
 def invert_tree(tree_left: Tree, tree_right: Tree):
     if not tree_left or not tree_right:
         return
